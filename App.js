@@ -29,6 +29,44 @@ function HomeScreen({ navigation }) {
        >
          Camera
        </Text>
+       </TouchableOpacity>
+       <TouchableOpacity
+       style={{
+         width: "80%",
+         padding: 5,
+         borderColor: "red",
+         borderWidth: 1,
+         borderRadius: 15,
+         marginVertical: 10
+       }}
+     >
+       <Text
+         style={{ textAlign: "center", color: "red" }}
+         onPress={() =>
+           navigation.navigate("TakePicture")
+         }
+       >
+         Take picture
+       </Text>
+       </TouchableOpacity>
+       <TouchableOpacity
+       style={{
+         width: "80%",
+         padding: 5,
+         borderColor: "red",
+         borderWidth: 1,
+         borderRadius: 15,
+         marginVertical: 10
+       }}
+     >
+       <Text
+         style={{ textAlign: "center", color: "red" }}
+         onPress={() =>
+           navigation.navigate("SavePicture")
+         }
+       >
+         Save picture
+       </Text>
      </TouchableOpacity>
     
    </View>
@@ -43,6 +81,8 @@ function App() {
      <Stack.Navigator>
        <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Camera" component={SetCamera}/>
+        <Stack.Screen name="TakePicture" component={CameraFunction}/>
+        <Stack.Screen name="SavePicture" component={MediaFunction}/>
       
      </Stack.Navigator>
    </NavigationContainer>
